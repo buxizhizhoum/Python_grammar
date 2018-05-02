@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import functools
 import time
-from decorater import timeit
+from decorator import timeit
 
 
 @timeit
