@@ -13,6 +13,7 @@ def fibonacci(n):
         return fibonacci(n-1) + fibonacci(n-2)
 
 
+# this decorator will cache the least recently used result
 @functools.lru_cache()  # least recently used cache
 @timeit
 def fibonacci_1(n):
