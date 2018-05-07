@@ -23,6 +23,17 @@ def fibonacci_1(n):
         return fibonacci_1(n-1) + fibonacci_1(n-2)
 
 
+def fibonacci_2():
+    """
+    from fluent python, chapter iterator
+    :return:
+    """
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+
 if __name__ == "__main__":
     # tmp = fibonacci(10)
     t0 = time.time()
@@ -33,3 +44,7 @@ if __name__ == "__main__":
 
     print("time no cache consumed: %s" % (t1 - t0))
     print("time cache consumed: %s" % (t2 - t1))
+
+    fib = fibonacci_2()
+    for i in range(10):
+        print(next(fib))
